@@ -31,4 +31,14 @@
         'group': 'wheel',
         'mode': '600',
     },
+	'Raspbian': {
+        'pkgs': ['hostapd'],
+        'service': 'hostapd',
+        'conf_dir': '/etc/hostapd',
+        'conf_file': 'hostapd.conf',
+        'user': 'root',
+        'group': 'root',
+        'mode': '600',
+        'defaults_file': '/etc/default/hostapd',
+    },
 }, grain='os', merge=salt['pillar.get']('hostapd:lookup')) %}
